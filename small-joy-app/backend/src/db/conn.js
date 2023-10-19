@@ -5,3 +5,4 @@ mongoose.connect("mongodb://localhost:27017/notes").then(()=>{
 }).catch(()=>{
     console.log("No connection available");
 })
+
