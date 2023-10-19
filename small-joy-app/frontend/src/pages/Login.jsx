@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Input, Button, Box, FormControl, FormLabel, Heading } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+
 
 const Login = () => {
+    const navigate=useNavigate();
+    const {isAuthorized,setIsAuthorized}=useContext(AuthContext);
+
+    const[loginCred,setLoginCred] =useState([]);
   const [form, setForm] = useState({
     username: '',
     password: ''
@@ -15,7 +22,17 @@ const Login = () => {
   const handleLogin=(e)=>{
     e.preventDefault();
     console.log("check login");
-    fetch("http://localhost:8080/notes/user").then((res)=>res.json()).then(data=>console.log(data));
+    fetch("http://localhost:8080/notes/user").then((res)=>res.json()).then(data=>setLoginCred(data));
+
+    loginCred.filter((el)=>{
+        if(el.username==form.username && el.password==form.password){
+            console.log("Login successful");
+            setIsAuthorized(true);
+            navigate("/Homepage")
+        }else(
+            alert("Login failed")
+        )
+    })
   }
   return (
     <Box>

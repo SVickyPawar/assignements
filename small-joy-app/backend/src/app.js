@@ -74,7 +74,6 @@ app.post("/notes/user", async (req, res) => {
 
 app.get("/notes/user", async (req, res) => {
     try {
-        // Retrieve user data from the database
         const users = await User.find({});
         res.send(users);
     } catch (e) {
