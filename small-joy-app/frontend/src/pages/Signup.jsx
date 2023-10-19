@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Input, Button, Box, FormControl, FormLabel, Heading } from '@chakra-ui/react';
+import { Input, Button, Box, FormControl, FormLabel, Heading, assignRef } from '@chakra-ui/react';
+import {  useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+    const navigate =useNavigate();
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -14,8 +16,29 @@ const Signup = () => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSignUp=()=>{
-    
+  const handleSignUp=async(e)=>{
+    e.preventDefault();
+
+    try {
+      const response = await fetch('http://localhost:8080/notes/user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+  
+      if (response.ok) {
+        
+        navigate('/'); 
+      } else {
+       
+        console.error('Signup failed', response.statusText);
+      }
+    } catch (error) {
+      
+      console.error('Signup failed', error);
+    }
   }
 
   return (
