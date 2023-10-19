@@ -1,10 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 require("../src/db/conn");
 
 const Notes = require("../src/models/notes");
+const User = require("../src/models/user");
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 const port = process.env.PORT || 8080;
@@ -47,6 +49,27 @@ app.delete("/notes/:id",async(req,res) => {
     }catch(e){
         res.status(500).send(e);
     }
+});
+
+app.post("/notes/user", async (req, res) => {
+	try {
+		const { username, password } = req.body;
+
+		const existingUser = await User.findOne({ username });
+
+		if (existingUser) {
+			return res.status(400).json({ message: "Username already taken" });
+		}
+
+		const user = new User({ username, password });
+
+		await user.save();
+
+		res.status(201).json({ message: "User registered successfully" });
+	} catch (error) {
+		console.error(error);
+		res.status(500).json({ message: "Server error" });
+	}
 });
 
 app.listen(port,()=>{
