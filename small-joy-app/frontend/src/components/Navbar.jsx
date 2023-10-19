@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const storedValue = localStorage.getItem('isLoggedIn');
 
-  // When the component mounts, update the isAuthorized state based on local storage
+  
   useEffect(() => {
     if (storedValue === 'true') {
       setIsAuthorized(true);
@@ -20,14 +20,14 @@ const Navbar = () => {
 
   const handleLogin = () => {
     if (isAuthorized) {
-      // If the user is authorized, perform a logout action
+     
       localStorage.setItem('isLoggedIn', 'false');
-      setIsAuthorized(false); // Update the state using your context
+      setIsAuthorized(false); 
       navigate('/');
     } else {
-      // If the user is not authorized, perform a login action
+      
       localStorage.setItem('isLoggedIn', 'true');
-      setIsAuthorized(true); // Update the state using your context
+      setIsAuthorized(true); 
     }
   };
 

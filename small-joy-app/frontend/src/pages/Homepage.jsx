@@ -49,7 +49,7 @@ const Homepage = () => {
 
   useEffect(() => {
     fetchData();
-  }, [dataAdded]); // Fetch data when the data changes
+  }, [dataAdded]); 
 
   return (
     <div>

@@ -75,9 +75,7 @@ const Card = ({ id, title, content, deleteData,updateData }) => {
   })
     .then((response) => {
       if (response.ok) {
-        // The card was successfully deleted, you can perform further actions if needed
-        // For example, remove the card from the UI
-         // Call the deleteCard function to remove the card from the UI
+       
          deleteData(id);
       } else {
         // Handle error if the DELETE request was not successful
