@@ -53,7 +53,7 @@ const Homepage = () => {
 
   return (
     <div>
-      Homepage
+      
       <Box p="4">
         <SimpleGrid columns={[1, 2, 3]} spacing={4}>
           {data.map((item, index) => (
