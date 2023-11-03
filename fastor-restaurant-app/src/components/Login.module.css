@@ -1,0 +1,93 @@
+
+.container{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+h2{
+    font-weight: 700;
+    font-size: 26px;
+    text-align: left;
+    font-family: 'Urbanist', sans-serif;
+  
+}
+p{
+    color:  #8391A1;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+   margin-top: -10px !important;
+}
+.box{
+   display: flex;
+   flex-direction: column;
+   margin-top: 80px !important;
+   
+}
+input{
+    border: 1px solid #DADADA;
+    height: 56px;
+    border-radius: 8px;
+    margin-top: 16px !important; 
+    padding-left: 15px;
+}
+input::placeholder {
+    color: #8391A1;
+    font-weight: 500px !important;
+  }
+  input:focus {
+    outline: none;
+  }
+  input:focus {
+    border: 2px solid #DADADA ; /* Replace with your desired color */
+    box-shadow: 0 0 5px #DADADA ; /* Add a box shadow for better visibility */
+  }
+  button{
+    height: 56px;
+    border-radius: 8px;
+    background-color: #FF6D6A !important;
+    border-color: #FF6D6A !important;
+    margin-top: 20px !important;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  
+  /* For Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+@media screen and (max-width:575px){
+    .box{
+        margin:auto;
+        width: 90%;
+       
+
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .box{
+        margin: auto;
+        width: 90%;
+        padding: 20px;
+        background-color: aquamarine;
+        
+    }
+}
+
+@media screen and (min-width:992px){
+    .box{
+        margin: auto;
+        width: 85%;
+        padding: 20px;
+        
+    }
+}
