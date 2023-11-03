@@ -9,7 +9,6 @@ const Navbar = () => {
 
   const storedValue = localStorage.getItem('isLoggedIn');
 
-  
   useEffect(() => {
     if (storedValue === 'true') {
       setIsAuthorized(true);
@@ -20,14 +19,12 @@ const Navbar = () => {
 
   const handleLogin = () => {
     if (isAuthorized) {
-     
       localStorage.setItem('isLoggedIn', 'false');
-      setIsAuthorized(false); 
+      setIsAuthorized(false);
       navigate('/');
     } else {
-      
       localStorage.setItem('isLoggedIn', 'true');
-      setIsAuthorized(true); 
+      setIsAuthorized(true);
     }
   };
 
@@ -35,7 +32,7 @@ const Navbar = () => {
     <Box
       as="nav"
       p="1rem"
-      backgroundColor="teal.500"
+      backgroundColor="lightblue" // Light background color
       color="white"
       display="flex"
       justifyContent="flex-end"
@@ -44,6 +41,7 @@ const Navbar = () => {
         onClick={handleLogin}
         backgroundColor="teal.400"
         _hover={{ backgroundColor: "teal.600" }}
+        size="md" // Proper button sizing
       >
         {isAuthorized ? 'Logout' : 'Login'}
       </Button>
