@@ -7,7 +7,7 @@ import Homepage from './components/Homepage';
 function App() {
   return (
     <div className="App">
-      <h3>Welcome to Fastor</h3>
+      
       
     <Routes>
       <Route path='/' element={<Login/>}/>
