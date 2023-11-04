@@ -1,0 +1,88 @@
+.main{
+    text-align: left;
+    background-color: #FFFFFF;
+}
+h6{
+    color:#8391A1 !important;
+}
+.navbar{
+    width: 100%;
+    height: 70x;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    padding: 0px 10px 1px 10px;
+}
+.icons{
+    display: flex;
+
+}
+.name{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.box{
+    padding: 0px 10px;
+    border:1px solid red;
+    width: 100%;
+    height: 320px;
+}
+.diplayGrid{
+    display: flex;
+}
+.boxText{
+    display: flex;
+    justify-content: space-between;
+}
+.verticalCard{
+    width:120px;
+     height:180px;
+     border:1px solid transparent;
+}
+.verticalCard img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    
+}
+
+
+
+
+@media screen and (max-width:575px){
+   /* .diplayGrid{
+    display: grid;
+    grid-template-columns: repeat(3,120px);
+    gap: 10px;
+   } */
+   .tryNowpic{
+    width: 100%;
+    height: 300px;
+
+}
+}
+
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .tryNowpic{
+        width: 100%;
+        height: 300px;
+    
+    }
+  
+}
+
+@media screen and (min-width:992px){
+    .tryNowpic{
+        width: 100%;
+        height: 400px;
+        
+    }
+   
+     .diplayGrid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+   }
+}
