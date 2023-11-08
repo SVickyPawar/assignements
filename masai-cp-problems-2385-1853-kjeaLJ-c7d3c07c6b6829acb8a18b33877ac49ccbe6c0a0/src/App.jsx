@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Booklet from "./Components/Booklet";
 
 function App() {
   const [isTakeTest, setIsTakeTest] = useState(false);
@@ -9,7 +10,9 @@ function App() {
     fetchData();
   },[])
 
-  return <div className="App">{/* import Booklet component here */}</div>;
+  return <div className="App">{/* import Booklet component here */}
+    <h3></h3>
+  </div>;
 }
 
 export default App;
