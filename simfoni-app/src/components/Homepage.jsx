@@ -9,10 +9,17 @@ import {
 	MenuList,
 	MenuItem,
 	Menu,
+	Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { IoMdArrowDropdown,IoIosArrowDown,IoIosArrowForward  } from "react-icons/io";
+import {
+	IoMdArrowDropdown,
+	IoIosArrowDown,
+	IoIosArrowForward,
+} from "react-icons/io";
 import { IoSearchOutline } from "react-icons/io5";
+import CardTemp from "./CardTemp";
+import CarousalCard from "./CarousalCard";
 
 const Homepage = () => {
 	return (
@@ -93,117 +100,142 @@ const Homepage = () => {
 				</div>
 			</div>
 
-
 			<div className="hidden md:block w-full bg-[#FFFFFF] mt-3 rounded-sm">
-			<div className="md:flex  w-[650px] h-8 justify-between">
-				<Menu>
-					<MenuButton>
-						<span className="flex items-center">
-							All Categories{" "}
-							<span className="mt-1 ml-0.5">{<IoIosArrowDown  />}</span>
-						</span>
-					</MenuButton>
-					<MenuList>
-						
-						<div style={{ position: "relative" }}>
-							<Menu placement="right-end">
-								<MenuButton>
-									<span className="w-[210px] flex items-center justify-between ml-3 ">
-										Cleaning Supplies{" "}
-										<span className="mt-0">{<IoIosArrowForward/>}</span>
-									</span>
-								</MenuButton>
-								<MenuList style={{ position: "absolute", left: 0, top: 0 }}>
-									<MenuItem>ANCILLARIES</MenuItem>
-									<MenuItem>CATERING & KITCHEN</MenuItem>
-									<MenuItem>FLOOR CARE MACHINE</MenuItem>
-									<MenuItem>PAPER</MenuItem>
-								</MenuList>
-							</Menu>
-						</div>
-						<MenuItem>Beverages</MenuItem>
-						<MenuItem>Medical Equipments</MenuItem>
-						<MenuItem>Office Supplies</MenuItem>
-						
-					</MenuList>
-				</Menu>
+				<div className="md:flex  w-[650px] h-8 justify-between">
+					<Menu>
+						<MenuButton>
+							<span className="flex items-center">
+								All Categories{" "}
+								<span className="mt-1 ml-0.5">{<IoIosArrowDown />}</span>
+							</span>
+						</MenuButton>
+						<MenuList>
+							<div style={{ position: "relative" }}>
+								<Menu placement="right-end">
+									<MenuButton>
+										<span className="w-[210px] flex items-center justify-between ml-3 ">
+											Cleaning Supplies{" "}
+											<span className="mt-0">{<IoIosArrowForward />}</span>
+										</span>
+									</MenuButton>
+									<MenuList style={{ position: "absolute", left: 0, top: 0 }}>
+										<MenuItem>ANCILLARIES</MenuItem>
+										<MenuItem>CATERING & KITCHEN</MenuItem>
+										<MenuItem>FLOOR CARE MACHINE</MenuItem>
+										<MenuItem>PAPER</MenuItem>
+									</MenuList>
+								</Menu>
+							</div>
+							<MenuItem>Beverages</MenuItem>
+							<MenuItem>Medical Equipments</MenuItem>
+							<MenuItem>Office Supplies</MenuItem>
+						</MenuList>
+					</Menu>
 
-				<Menu>
-					<MenuButton>
-						<span className="flex items-center">
-							Fruits <span className="mt-1 ml-0.5">{<IoIosArrowDown  />}</span>
-						</span>
-					</MenuButton>
-					<MenuList>
-						<MenuItem>Download</MenuItem>
-						<MenuItem>Create a Copy</MenuItem>
-						<MenuItem>Mark as Draft</MenuItem>
-						<MenuItem>Delete</MenuItem>
-						<MenuItem>Attend a Workshop</MenuItem>
-					</MenuList>
-				</Menu>
+					<Menu>
+						<MenuButton>
+							<span className="flex items-center">
+								Fruits <span className="mt-1 ml-0.5">{<IoIosArrowDown />}</span>
+							</span>
+						</MenuButton>
+						<MenuList>
+							<MenuItem>Download</MenuItem>
+							<MenuItem>Create a Copy</MenuItem>
+							<MenuItem>Mark as Draft</MenuItem>
+							<MenuItem>Delete</MenuItem>
+							<MenuItem>Attend a Workshop</MenuItem>
+						</MenuList>
+					</Menu>
 
-				<Menu>
-					<MenuButton>
-						<span className="flex items-center">
-							Vegetables <span className="mt-1 ml-0.5">{<IoIosArrowDown  />}</span>
-						</span>
-					</MenuButton>
-					<MenuList>
-						<MenuItem>Download</MenuItem>
-						<MenuItem>Create a Copy</MenuItem>
-						<MenuItem>Mark as Draft</MenuItem>
-						<MenuItem>Delete</MenuItem>
-						<MenuItem>Attend a Workshop</MenuItem>
-					</MenuList>
-				</Menu>
+					<Menu>
+						<MenuButton>
+							<span className="flex items-center">
+								Vegetables{" "}
+								<span className="mt-1 ml-0.5">{<IoIosArrowDown />}</span>
+							</span>
+						</MenuButton>
+						<MenuList>
+							<MenuItem>Download</MenuItem>
+							<MenuItem>Create a Copy</MenuItem>
+							<MenuItem>Mark as Draft</MenuItem>
+							<MenuItem>Delete</MenuItem>
+							<MenuItem>Attend a Workshop</MenuItem>
+						</MenuList>
+					</Menu>
 
-				<Menu>
-					<MenuButton>
-						<span className="flex items-center">
-							Dairy <span className="mt-1 ml-0.5">{<IoIosArrowDown  />}</span>
-						</span>
-					</MenuButton>
-					<MenuList>
-						<MenuItem>Download</MenuItem>
-						<MenuItem>Create a Copy</MenuItem>
-						<MenuItem>Mark as Draft</MenuItem>
-						<MenuItem>Delete</MenuItem>
-						<MenuItem>Attend a Workshop</MenuItem>
-					</MenuList>
-				</Menu>
+					<Menu>
+						<MenuButton>
+							<span className="flex items-center">
+								Dairy <span className="mt-1 ml-0.5">{<IoIosArrowDown />}</span>
+							</span>
+						</MenuButton>
+						<MenuList>
+							<MenuItem>Download</MenuItem>
+							<MenuItem>Create a Copy</MenuItem>
+							<MenuItem>Mark as Draft</MenuItem>
+							<MenuItem>Delete</MenuItem>
+							<MenuItem>Attend a Workshop</MenuItem>
+						</MenuList>
+					</Menu>
 
-				<Menu>
-					<MenuButton>
-						<span className="flex items-center">
-							Meat & Poultry{" "}
-							<span className="mt-1 ml-0.5">{<IoIosArrowDown  />}</span>
-						</span>
-					</MenuButton>
-					<MenuList>
-						<MenuItem>Download</MenuItem>
-						<MenuItem>Create a Copy</MenuItem>
-						<MenuItem>Mark as Draft</MenuItem>
-						<MenuItem>Delete</MenuItem>
-						<MenuItem>Attend a Workshop</MenuItem>
-					</MenuList>
-				</Menu>
+					<Menu>
+						<MenuButton>
+							<span className="flex items-center">
+								Meat & Poultry{" "}
+								<span className="mt-1 ml-0.5">{<IoIosArrowDown />}</span>
+							</span>
+						</MenuButton>
+						<MenuList>
+							<MenuItem>Download</MenuItem>
+							<MenuItem>Create a Copy</MenuItem>
+							<MenuItem>Mark as Draft</MenuItem>
+							<MenuItem>Delete</MenuItem>
+							<MenuItem>Attend a Workshop</MenuItem>
+						</MenuList>
+					</Menu>
 
-				<Menu>
-					<MenuButton>
-						<span className="flex items-center">
-							Sea Food <span className="mt-1 ml-0.5">{<IoIosArrowDown  />}</span>
-						</span>
-					</MenuButton>
-					<MenuList>
-						<MenuItem>Download</MenuItem>
-						<MenuItem>Create a Copy</MenuItem>
-						<MenuItem>Mark as Draft</MenuItem>
-						<MenuItem>Delete</MenuItem>
-						<MenuItem>Attend a Workshop</MenuItem>
-					</MenuList>
-				</Menu>
+					<Menu>
+						<MenuButton>
+							<span className="flex items-center">
+								Sea Food{" "}
+								<span className="mt-1 ml-0.5">{<IoIosArrowDown />}</span>
+							</span>
+						</MenuButton>
+						<MenuList>
+							<MenuItem>Download</MenuItem>
+							<MenuItem>Create a Copy</MenuItem>
+							<MenuItem>Mark as Draft</MenuItem>
+							<MenuItem>Delete</MenuItem>
+							<MenuItem>Attend a Workshop</MenuItem>
+						</MenuList>
+					</Menu>
+				</div>
 			</div>
+
+			{/* Sections */}
+
+			<div className="w-full h-auto bg-[#FFFFFF]">
+				<Text
+					fontSize="lg"
+					className="font-semibold  md:mx-20 mt-6 bg-[#FFFFFF] "
+				>
+					{" "}
+					BEST SELLING CATEGORIES
+				</Text>
+				<div className="mt-3 grid grid-cols-2 gap-4  md:flex md:justify-evenly  bg-[#FFFFFF]">
+					<CardTemp />
+					<CardTemp />
+					<CardTemp />
+					<CardTemp />
+					<CardTemp />
+				</div>
+			</div>
+
+
+			{/* Best Selling Items */}
+
+			<div className="w-full h-auto bg-[#FFFFFF] border-solid border-2 border-red-300">
+				<CarousalCard/>
 			</div>
 		</div>
 	);
