@@ -1,0 +1,17 @@
+.sample-drag-bar {
+    flex-shrink: 0;
+    width: 5px;
+    background-color: brown;
+    cursor: col-resize;
+  }
+  
+  .sample-drag-bar.sample-drag-bar--dragging,
+  .sample-drag-bar:hover {
+    background-color: brown;
+  }
+  
+  .sample-drag-bar.sample-drag-bar--horizontal {
+    height: 5px;
+    width: 100%;
+    cursor: row-resize;
+  }

@@ -1,0 +1,1 @@
+export const comp = (...args) => args.filter(Boolean).join(" ");
