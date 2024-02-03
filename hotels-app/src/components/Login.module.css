@@ -1,5 +1,5 @@
 
-.containerOtp{
+.container{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -22,14 +22,20 @@ p{
     text-align: left;
    margin-top: -10px !important;
 }
-.boxOtp{
+.box{
    display: flex;
    flex-direction: column;
    margin-top: 80px !important;
    
-   
 }
-
+input{
+    border: 1px solid #DADADA;
+    height: 56px;
+    border-radius: 8px;
+    margin-top: 16px !important; 
+    padding-left: 15px;
+    background-color: #F7F8F9;
+}
 input::placeholder {
     color: #8391A1;
     font-weight: 500px !important;
@@ -58,17 +64,30 @@ input::placeholder {
   /* For Firefox */
   input[type="number"] {
     -moz-appearance: textfield;
+  }
+@media screen and (max-width:575px){
+    .box{
+        margin:auto;
+        width: 90%;
+       
 
-  }
+    }
+}
 
-  .inputBox{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .inputBox input{
-    width: 49px;
-    height: 60px;
-    background-color: #F7F8F9;
-    
-  }
+@media screen and (min-width:576px) and (max-width:991px){
+    .box{
+        margin: auto;
+        width: 90%;
+        padding: 20px;
+        
+    }
+}
+
+@media screen and (min-width:992px){
+    .box{
+        margin: auto;
+        width: 85%;
+        padding: 20px;
+        
+    }
+}

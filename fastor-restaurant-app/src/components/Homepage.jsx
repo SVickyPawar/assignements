@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Homepage.module.css";
+import { useNavigate } from "react-router-dom";
 import {
 	Card,
 	Stack,
@@ -11,20 +12,28 @@ import {
 	CardFooter,
 	Grid,
 	GridItem,
+	Flex,
+	Wrap,
 } from "@chakra-ui/react";
+import { FaStar } from "react-icons/fa";
+import { BsCurrencyDollar } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { BiSolidOffer } from "react-icons/bi";
 
 const Homepage = () => {
+	const navigate = useNavigate();
 	const [resdata, setResdata] = useState([]);
 	const token =
-		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTgxMCIsImVtYWlsIjoiOTgxODk3OTQ1MEBmYXN0b3IuaW4iLCJwaG9uZSI6Ijk4MTg5Nzk0NTAiLCJkaWFsX2NvZGUiOiIrOTEiLCJsYXN0X3Bhc3N3b3JkX3VwZGF0ZSI6IjIwMjAtMTItMTlUMTE6MTM6MjQuMDAwWiIsImlhdCI6MTY5OTA3NzI1NiwiZXhwIjoxNzA2MzM0ODU2fQ.bdGB6gYuLIkLiC_reFgp6S0RxjDSs67tf_NEb_fSo00";
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM4NiIsImVtYWlsIjoiOTgxODk3OTQ1MEBmYXN0b3IuaW4iLCJwaG9uZSI6Ijk4MTg5Nzk0NTAiLCJkaWFsX2NvZGUiOiIrOTEiLCJsYXN0X3Bhc3N3b3JkX3VwZGF0ZSI6IjIwMjMtMTItMDJUMDk6MjQ6NDcuMDAwWiIsImlhdCI6MTcwNjk1NDI1NywiZXhwIjoxNzE0MjExODU3fQ.14BVG_J8w26uDnMyEhVLLWbW_Wy-o8hNiPerYRK4zQM";
 	useEffect(() => {
-		fetch("https://staging.fastor.in/v1/m/restaurant?city_id=118");
-
 		fetch("https://staging.fastor.in/v1/m/restaurant?city_id=118", {
 			headers: { Authorization: `Bearer ${token}` },
 		})
 			.then((resp) => resp.json())
-			.then((json) => {setResdata(json);console.log(json)});
+			.then((json) => {
+				setResdata(json);
+				console.log(json, "json");
+			});
 	}, []);
 
 	return (
@@ -51,7 +60,7 @@ const Homepage = () => {
 							width="50px"
 							height="50px"
 						/>
-						<p>Special Offers</p>
+						<Text fontSize={"14px"}> Offers</Text>
 					</div>
 					<div>
 						<img
@@ -60,7 +69,7 @@ const Homepage = () => {
 							width="50px"
 							height="50px"
 						/>
-						<p>Wallet</p>
+						<Text fontSize={"14px"}>Wallet</Text>
 					</div>
 				</div>
 			</div>
@@ -70,16 +79,16 @@ const Homepage = () => {
 					<p>Your tase</p>
 					<p>
 						{" "}
+						see all
 						<span>
 							<i className="fas fa-chevron-right"></i>
 						</span>
-						see all
 					</p>
 				</div>
 				<div className={styles.diplayGrid}>
 					<div className={styles.verticalCard}>
 						<img
-							src="https://s3-alpha-sig.figma.com/img/a25f/9d25/01c2dd2d51c72422508105fa7b2d079f?Expires=1699833600&Signature=J~Y8xP5AidOc1kRcaG-Si4M7elAGqBMyA6FWVxIH5GjxNnsMBX1-AWVy1ai09xv2U9l58acqQEW5-QJ2GUFXs-sPkwewXyOqwDYcfcvZxbPdgyhs-PgvTAwJx7U4EO5DyioyJTRcBtWVgTqmoDdkW5cKvgEnKdFb-j9Arght9Dwb2SGUTZLgEvKrB7LPI2xXAidnZHmWnN3gTY0wloP071WMa449jaelloioc3bwFMlYZZwI03~pRkKtfwi8Kl9YWyUB6tXq4nXZHSb1H2B4ZkattsQAnlxl-ncUChldTo-aN1XpgX8H~HJbjd5-d~mwlnTcXbV0U4YBptcBWb1kkg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+							src="https://media.istockphoto.com/id/1146671798/photo/waiter-serving-group-of-female-friends-meeting-for-drinks-and-food-in-restaurant.jpg?s=2048x2048&w=is&k=20&c=1KyDRr8Flgdxzlhu4l2AXT21xMPA9MlfpUrkeJRcKnM="
 							alt=""
 						/>
 						<div
@@ -87,7 +96,7 @@ const Homepage = () => {
 								width: "100%",
 								height: "70px",
 								lineHeight: "14px",
-								backgroundColor: "#FFB6C1",
+								backgroundColor: "#CEFAAC",
 							}}
 						>
 							<p style={{ padding: "10px 0px 0px 10px" }}>Nik Bakers</p>
@@ -104,7 +113,7 @@ const Homepage = () => {
 					</div>
 					<div className={styles.verticalCard}>
 						<img
-							src="https://s3-alpha-sig.figma.com/img/a25f/9d25/01c2dd2d51c72422508105fa7b2d079f?Expires=1699833600&Signature=J~Y8xP5AidOc1kRcaG-Si4M7elAGqBMyA6FWVxIH5GjxNnsMBX1-AWVy1ai09xv2U9l58acqQEW5-QJ2GUFXs-sPkwewXyOqwDYcfcvZxbPdgyhs-PgvTAwJx7U4EO5DyioyJTRcBtWVgTqmoDdkW5cKvgEnKdFb-j9Arght9Dwb2SGUTZLgEvKrB7LPI2xXAidnZHmWnN3gTY0wloP071WMa449jaelloioc3bwFMlYZZwI03~pRkKtfwi8Kl9YWyUB6tXq4nXZHSb1H2B4ZkattsQAnlxl-ncUChldTo-aN1XpgX8H~HJbjd5-d~mwlnTcXbV0U4YBptcBWb1kkg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+							src="https://media.istockphoto.com/id/1146671798/photo/waiter-serving-group-of-female-friends-meeting-for-drinks-and-food-in-restaurant.jpg?s=2048x2048&w=is&k=20&c=1KyDRr8Flgdxzlhu4l2AXT21xMPA9MlfpUrkeJRcKnM="
 							alt=""
 						/>
 						<div
@@ -112,7 +121,7 @@ const Homepage = () => {
 								width: "100%",
 								height: "70px",
 								lineHeight: "14px",
-								backgroundColor: "#FFB6C1",
+								backgroundColor: "#CEFAAC",
 							}}
 						>
 							<p style={{ padding: "10px 0px 0px 10px" }}>Nik Bakers</p>
@@ -129,7 +138,7 @@ const Homepage = () => {
 					</div>
 					<div className={styles.verticalCard}>
 						<img
-							src="https://s3-alpha-sig.figma.com/img/a25f/9d25/01c2dd2d51c72422508105fa7b2d079f?Expires=1699833600&Signature=J~Y8xP5AidOc1kRcaG-Si4M7elAGqBMyA6FWVxIH5GjxNnsMBX1-AWVy1ai09xv2U9l58acqQEW5-QJ2GUFXs-sPkwewXyOqwDYcfcvZxbPdgyhs-PgvTAwJx7U4EO5DyioyJTRcBtWVgTqmoDdkW5cKvgEnKdFb-j9Arght9Dwb2SGUTZLgEvKrB7LPI2xXAidnZHmWnN3gTY0wloP071WMa449jaelloioc3bwFMlYZZwI03~pRkKtfwi8Kl9YWyUB6tXq4nXZHSb1H2B4ZkattsQAnlxl-ncUChldTo-aN1XpgX8H~HJbjd5-d~mwlnTcXbV0U4YBptcBWb1kkg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+							src="https://media.istockphoto.com/id/1146671798/photo/waiter-serving-group-of-female-friends-meeting-for-drinks-and-food-in-restaurant.jpg?s=2048x2048&w=is&k=20&c=1KyDRr8Flgdxzlhu4l2AXT21xMPA9MlfpUrkeJRcKnM="
 							alt=""
 						/>
 						<div
@@ -137,7 +146,7 @@ const Homepage = () => {
 								width: "100%",
 								height: "70px",
 								lineHeight: "14px",
-								backgroundColor: "#FFB6C1",
+								backgroundColor: "#CEFAAC",
 							}}
 						>
 							<p style={{ padding: "10px 0px 0px 10px" }}>Nik Bakers</p>
@@ -156,7 +165,7 @@ const Homepage = () => {
 			</div>
 			<div className={styles.tryNowpic}>
 				<img
-					src="https://s3-alpha-sig.figma.com/img/a25f/9d25/01c2dd2d51c72422508105fa7b2d079f?Expires=1699833600&Signature=J~Y8xP5AidOc1kRcaG-Si4M7elAGqBMyA6FWVxIH5GjxNnsMBX1-AWVy1ai09xv2U9l58acqQEW5-QJ2GUFXs-sPkwewXyOqwDYcfcvZxbPdgyhs-PgvTAwJx7U4EO5DyioyJTRcBtWVgTqmoDdkW5cKvgEnKdFb-j9Arght9Dwb2SGUTZLgEvKrB7LPI2xXAidnZHmWnN3gTY0wloP071WMa449jaelloioc3bwFMlYZZwI03~pRkKtfwi8Kl9YWyUB6tXq4nXZHSb1H2B4ZkattsQAnlxl-ncUChldTo-aN1XpgX8H~HJbjd5-d~mwlnTcXbV0U4YBptcBWb1kkg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+					src="https://media.istockphoto.com/id/1169694902/photo/assorted-indian-non-vegetarian-food-recipe-served-in-a-group-includes-chicken-curry-mutton.jpg?s=2048x2048&w=is&k=20&c=_F4O6GkTFvwnpM5Ic_x52WNuQGg9bsMcfA9hTzzO8Fg="
 					alt=""
 					width="95%"
 					height="100%"
@@ -165,39 +174,81 @@ const Homepage = () => {
 			</div>
 			<div>
 				<h6>Popular Ones</h6>
-				<Grid
-					templateColumns="repeat(auto-fit, minmax(250px, 1fr))"
-					gap={4}
-				>
-					{resdata.length &&
-						resdata.map((item) => (
-							<Card
-								key={item.id}
-								variant="outline"
-							>
+				<Card gap={4}>
+					{resdata?.map((item) => (
+						//<Link key={item.id} to={`/restaurants/${item.restaurant_id}`}>
+						<Card
+							key={item.id}
+							variant="outline"
+							onClick={() => navigate(`/restaurants/${item.restaurant_id}`)}
+						>
+							<Flex key={item.id} variant="outline">
 								<Image
-									objectFit="cover"
+									objectFit="contain"
 									src={item.images[0].url}
 									alt={item.restaurant_name}
+									width="200px"
+									height="200px"
+									marginLeft="15px"
+									marginTop="30px"
 								/>
-								<Stack p={4}>
+								<Stack
+									p={4}
+									flex="2" // Take 2/3 of the available space
+								>
 									<CardBody>
 										<Heading size="md">
-											{item.restaurant_name}
+											{item.restaurant_name.substring(0, 20)}
 										</Heading>
-										<Text py={2}>
-											Caffè latte is a coffee beverage of Italian origin made with espresso and steamed milk.
-										</Text>
+										<Text py={2}>Cakes, Pastrys and Pastas</Text>
+										<Text>{item?.location?.location_address}</Text>
+										<Wrap>
+											{item?.cuisinesToDisplay?.map((ele) => (
+												<Text
+													key={ele.cuisine_id}
+													fontSize="md"
+													fontWeight="semibold"
+													mr="2"
+													color="gray.600"
+												>
+													{ele.cuisine_name}
+												</Text>
+											))}
+										</Wrap>
+
+										<div className={styles.offers}>
+											<BiSolidOffer />
+											<Text color={"orange.500"}>4 Offers trending</Text>
+										</div>
+										<div
+											style={{
+												display: "flex",
+												justifyContent: "space-between",
+												marginTop: "35px",
+											}}
+										>
+											<div>
+												<Text display="flex">
+													{" "}
+													<FaStar
+														style={{ marginTop: "3px", marginRight: "3px" }}
+													/>{" "}
+													{item.rating.restaurant_avg_rating}
+												</Text>
+												<Text style={{ marginBottom: "10px" }}>Popularity</Text>
+											</div>
+											<div>
+												<Text display="flex"> {item.currency.symbol} 200</Text>
+												<Text>Cost for two</Text>
+											</div>
+										</div>
 									</CardBody>
-									<CardFooter>
-										<Button variant="solid" colorScheme="blue">
-											Buy Latte
-										</Button>
-									</CardFooter>
 								</Stack>
-							</Card>
-						))}
-				</Grid>
+							</Flex>
+						</Card>
+						//</Link>
+					))}
+				</Card>
 			</div>
 		</div>
 	);

@@ -50,11 +50,11 @@ h6{
 
 
 @media screen and (max-width:575px){
-   .diplayGrid{
+   /* .diplayGrid{
     display: grid;
     grid-template-columns: repeat(3,120px);
     gap: 10px;
-   }
+   } */
    .tryNowpic{
     width: 100%;
     height: 300px;
@@ -84,21 +84,4 @@ h6{
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
    }
-}
-
-.offers{
-    display: flex;
-    color: rgb(215, 147, 21);
-    border: 1px solid transparent;
-    place-items: center;
-}
-
-.offers>p{
-    margin-left: 5px;
-    margin-bottom: -5px;
-    border: 1px solid transparent;
-}
-
-.icons>div:nth-child(1){
-    margin-right: 25px;
 }

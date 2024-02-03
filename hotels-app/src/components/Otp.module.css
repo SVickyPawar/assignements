@@ -72,3 +72,33 @@ input::placeholder {
     background-color: #F7F8F9;
     
   }
+@media screen and (max-width:575px){
+    .boxOtp{
+        margin:auto;
+        width: 90%;
+       
+
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .boxOtp{
+        margin: auto;
+        width: 55%;
+        padding: 20px;
+        
+    }
+}
+
+@media screen and (min-width:992px){
+    .boxOtp{
+        margin: auto;
+        width: 60%;
+        padding: 20px;
+        
+    }
+    .inputBox input{
+        width: 4.5rem;
+        height: 5rem;
+    }
+}

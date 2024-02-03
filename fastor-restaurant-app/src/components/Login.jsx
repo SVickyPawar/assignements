@@ -1,19 +1,43 @@
 
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import  styles from '../components/Login.module.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
 	const navigate = useNavigate();
 	const [mobileNumber, setMobileNumber] = useState('');
-	const handleLogin = ()=>{
-		if(mobileNumber.length==10){
-			navigate('/otpinput')
-		}else{
-			alert('Enter correct mobile number');
+	const [isLoggedIn,setIsLoggedIn] = useState(false);
+	const handleLogin = async()=>{
+		try{
+			if(mobileNumber.length==10){
+				const res = await axios.post(
+					`https://staging.fastor.in/v1/pwa/user/register`,
+					{
+					  phone: Number(mobileNumber),
+					  dial_code: "+91", 
+					}
+				  );
+				  if (res.data.status_code === 200) {
+					setIsLoggedIn(true);
+				  } else {
+					alert("Registration failed");
+				  }
+			}else{
+				alert('Enter correct mobile number');
+			}
+		} catch(error){
+			alert("Something went wrong");
 		}
+		
 	}
+
+	useEffect(()=>{
+		if(isLoggedIn){
+			navigate("/otpinput", { state: { phoneNumber: mobileNumber } });
+		}
+	},[isLoggedIn,mobileNumber,navigate])
   return (
 		<div className={styles.container}>
 			
